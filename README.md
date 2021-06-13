@@ -1,3 +1,7 @@
+#源代码来自 lijiejie/subDomainsBrute
+新增通配符*
+
+
 # subDomainsBrute 1.4 #
 
 A fast sub domain brute tool for pentesters.
