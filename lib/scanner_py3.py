@@ -129,7 +129,12 @@ class SubNameBrute(object):
                     continue
 
                 self.scan_count_local += 1
-                cur_domain = sub + '.' + self.domain
+                if "*" in self.domain:
+                    cur_domain = self.domain.replace("*",sub)
+                elif self.domain[0] == ".":
+                    cur_domain = sub + self.domain
+                else:
+                    cur_domain = sub + '.' + self.domain
                 # print('Query %s' % cur_domain)
                 answers = await self.resolvers[j].query(cur_domain, 'A')
 
